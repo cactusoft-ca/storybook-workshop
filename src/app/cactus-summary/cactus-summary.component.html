@@ -1,0 +1,15 @@
+<div
+  class="rounded-lg bg-white drop-shadow flex h-28 hover:cursor-pointer hover:bg-slate-50"
+  [class.bg-slate-50]="isSelected"
+>
+  <div class="flex-none w-24 h-full relative">
+    <img
+      [src]="cactus?.avatar + '?random=' + cactus?.id"
+      class="absolute inset-0 w-full h-full object-cover rounded-lg"
+    />
+  </div>
+
+  <div class="p-4" [class.font-bold]="isSelected">
+    {{ cactus?.name | titlecase }}
+  </div>
+</div>
