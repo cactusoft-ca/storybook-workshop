@@ -8,16 +8,26 @@
     hover:cursor-pointer
     hover:bg-slate-50
   "
-  [class.bg-slate-50]="isSelected"
+  [class.selected]="isSelected"
 >
-  <div class="flex-none w-24 h-full relative">
-    <img
-      [src]="cactus?.avatar + '?random=' + cactus?.id"
-      class="absolute inset-0 w-full h-full object-cover rounded-lg"
-    />
-  </div>
+  <ng-container *ngIf="cactus != null; else emptyState">
+    <div class="flex-none w-24 h-full relative">
+      <img
+        [src]="
+          cactus?.avatar != null
+            ? cactus?.avatar + '?lock=' + cactus?.id
+            : '/assets/placeholder.svg'
+        "
+        class="absolute inset-0 w-full h-full object-cover rounded-lg"
+      />
+    </div>
 
-  <div class="p-4" [class.font-bold]="isSelected">
-    {{ cactus?.name }}
-  </div>
+    <div class="p-4" [class.font-bold]="isSelected">
+      {{ cactus?.name != "" ? cactus.name : ("Cactus sans nom" | titlecase) }}
+    </div>
+  </ng-container>
+
+  <ng-template #emptyState>
+    <h1 class="m-3">Impossible de trouver ce cactus! 🌵😢</h1>
+  </ng-template>
 </div>
