@@ -1,7 +1,7 @@
 export interface CactusViewModel {
   createdAt: Date;
   name: string;
-  avatar: string;
+  avatar?: string;
   ownerUsername: string;
   ownerCity: string;
   age: number;
