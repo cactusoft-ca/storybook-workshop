@@ -1,0 +1,32 @@
+<div class="min-h-screen grid grid-cols-12 grid-rows-[64px__1fr]">
+  <header
+    class="
+      p-3
+      col-span-12
+      text-3xl text-white
+      font-extrabold
+      text-center
+      drop-shadow-md
+      bg-gradient-to-r
+      from-green-400
+      to-blue-500
+      z-50
+      font-['Happy_Monkey']
+    "
+  >
+    Cactus Paradise
+  </header>
+
+  <article class="p-3 col-span-9 bg-slate-50 grid grid-cols-3 gap-3">
+    <cactus-summary
+      *ngFor="let cactus of cactuses | async"
+      [cactus]="cactus"
+      [isSelected]="selectedCactus?.id == cactus.id"
+      (click)="selectedCactus = cactus"
+    >
+    </cactus-summary>
+  </article>
+  <aside class="p-3 col-span-3 bg-white drop-shadow-lg">
+    <cactus-details [cactus]="selectedCactus"></cactus-details>
+  </aside>
+</div>
