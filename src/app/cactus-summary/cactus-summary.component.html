@@ -14,8 +14,8 @@
     <div class="flex-none w-24 h-full relative">
       <img
         [src]="
-          cactus?.avatar != null
-            ? cactus?.avatar + '?lock=' + cactus?.id
+          cactus.avatar != null
+            ? cactus.avatar + '?lock=' + cactus.id
             : '/assets/placeholder.svg'
         "
         class="absolute inset-0 w-full h-full object-cover rounded-lg"
@@ -23,7 +23,7 @@
     </div>
 
     <div class="p-4" [class.font-bold]="isSelected">
-      {{ cactus?.name != "" ? cactus.name : ("Cactus sans nom" | titlecase) }}
+      {{ cactus.name != "" ? cactus.name : ("Cactus sans nom" | titlecase) }}
     </div>
   </ng-container>
 
