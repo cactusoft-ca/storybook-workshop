@@ -6,6 +6,7 @@ Bienvenue au workshop Cactusoft sur Storybook!
 
 Pour rouler le projet, vous devez installer [node.js](https://tinyurl.com/yfawu6m5).
 
+Vous aurez besoin d'un éditeur de texte (https://code.visualstudio.com/)
 
 Ensuite, cloner le repo.
 
